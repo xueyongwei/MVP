@@ -14,6 +14,7 @@
 		47BC75C5211ACB7B00535166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47BC75C4211ACB7B00535166 /* Assets.xcassets */; };
 		47BC75C8211ACB7B00535166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47BC75C6211ACB7B00535166 /* LaunchScreen.storyboard */; };
 		47BC75D0211ACD5500535166 /* MVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC75CF211ACD5500535166 /* MVPViewController.swift */; };
+		47BC75D2211ADCD600535166 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC75D1211ADCD600535166 /* MVVMViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		47BC75C7211ACB7B00535166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47BC75C9211ACB7B00535166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47BC75CF211ACD5500535166 /* MVPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPViewController.swift; sourceTree = "<group>"; };
+		47BC75D1211ADCD600535166 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				47BC75BA211ACB7B00535166 /* AppDelegate.swift */,
 				47BC75BC211ACB7B00535166 /* ViewController.swift */,
 				47BC75CF211ACD5500535166 /* MVPViewController.swift */,
+				47BC75D1211ADCD600535166 /* MVVMViewController.swift */,
 				47BC75BE211ACB7B00535166 /* Main.storyboard */,
 				47BC75C4211ACB7B00535166 /* Assets.xcassets */,
 				47BC75C6211ACB7B00535166 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47BC75D0211ACD5500535166 /* MVPViewController.swift in Sources */,
+				47BC75D2211ADCD600535166 /* MVVMViewController.swift in Sources */,
 				47BC75C3211ACB7B00535166 /* MVP.xcdatamodeld in Sources */,
 				47BC75BD211ACB7B00535166 /* ViewController.swift in Sources */,
 				47BC75BB211ACB7B00535166 /* AppDelegate.swift in Sources */,

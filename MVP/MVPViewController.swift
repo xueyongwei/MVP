@@ -29,6 +29,7 @@ class GreetingPresenter:GreetingViewPresenter{
     
     unowned let view: GreetingView
     let person: Person
+    let dataSource = [Person]()
     
     required init(view: GreetingView, person: Person) {
         self.view = view
@@ -36,10 +37,13 @@ class GreetingPresenter:GreetingViewPresenter{
     }
     
     func showGreeting() {
-        let greeting = "Hello " + self.person.firstName + " " + self.person.lastName
+        let greeting = "(MVP)Hello " + self.person.firstName + " " + self.person.lastName
         self.view.setGreeting(greeting: greeting)
     }
     
+    func requestData(){
+        
+    }
 }
 
 class MVPViewController: UIViewController, GreetingView {

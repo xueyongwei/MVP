@@ -11,29 +11,41 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let showGreetingButton = UIButton.init(type: .custom)
-    let greetingLabel = UILabel()
+    let mvpButton = UIButton.init(type: .custom)
+    let mvvmButton = UIButton.init(type: .custom)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        showGreetingButton.setTitle("click", for: .normal)
-        showGreetingButton.setTitleColor(.white, for: .normal)
-        showGreetingButton.backgroundColor = .red
-        self.view.addSubview(showGreetingButton)
+        mvpButton.setTitle("MVP", for: .normal)
+        mvpButton.setTitleColor(.white, for: .normal)
+        mvpButton.backgroundColor = .red
+        self.view.addSubview(mvpButton)
+        mvpButton.translatesAutoresizingMaskIntoConstraints = false
+        mvpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40 ).isActive = true
+        mvpButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
+        mvpButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        mvpButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        self.mvpButton.addTarget(self, action: #selector(didClickMVPButton(_:)), for: .touchUpInside)
         
-        showGreetingButton.translatesAutoresizingMaskIntoConstraints = false
-        showGreetingButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40 ).isActive = true
-        showGreetingButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
-        showGreetingButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        showGreetingButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
-        self.showGreetingButton.addTarget(self, action: #selector(didClickButton(sender:)), for: .touchUpInside)
+        mvvmButton.setTitle("MVVM", for: .normal)
+        mvvmButton.setTitleColor(.white, for: .normal)
+        mvvmButton.backgroundColor = .red
+        self.view.addSubview(mvvmButton)
+        mvvmButton.translatesAutoresizingMaskIntoConstraints = false
+        mvvmButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 90 ).isActive = true
+        mvvmButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
+        mvvmButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        mvvmButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        self.mvvmButton.addTarget(self, action: #selector(didClickMVVMButton(_:)), for: .touchUpInside)
         
     }
 
-    @objc func didClickButton(sender:UIButton){
+    @objc func didClickMVPButton(_ sender:UIButton){
         let person = Person(firstName: "rui", lastName: "xue")
         let view = MVPViewController()
         let presenter = GreetingPresenter.init(view: view, person: person)
@@ -42,7 +54,16 @@ class ViewController: UIViewController {
         
         
     }
-    
+    @objc func didClickMVVMButton(_ sender:UIButton){
+        
+        let person = MPerson.init(firstName: "Yuri", lastName: "X")
+        let view = MVVMViewController()
+        let modelView = GreetingViewModel.init(person: person)
+        view.viewModel = modelView
+        self.navigationController?.pushViewController(view, animated: true)
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
